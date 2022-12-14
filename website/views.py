@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
 from django.template.loader import render_to_string
+from django.contrib.auth.decorators import user_passes_test
 from .utils import *
 from .models import *
 
@@ -34,6 +35,7 @@ def create_waitlist_user(request):
         print(inviting_user)
         if inviting_user:
             inviting_user.invited_users += f'{waitlist_user.email} '
+            inviting_user.multiplier = inviting_user.multiplier * 2
             inviting_user.save()
 
     context = {
