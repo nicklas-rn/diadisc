@@ -9,8 +9,8 @@
     margin-left: 20%;
     position: absolute;
     z-index: -1;
+    height: 100vh;
 }
-
 
 .background--custom {
     background-color: #FFFFFF;
