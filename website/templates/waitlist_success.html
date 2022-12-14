@@ -1,0 +1,111 @@
+<div class="centered-wrapper">
+    <p class="waitlist-success-title">You're <span class="waitlist-success-focus">#{{count}}</span> in line!</p>
+    <p class="waitlist-success-text">Double your chances to win the gift card with every invited friend! (4 friends invited = 16x chance)</p>
+    <div class="centered-wrapper">
+        <p class="social-media-text">Share on social media</p>
+        <div class="social-media-wrapper">
+            <a class="social-media-link" href="whatsapp://send?text=diadisc.com?code={{code}}" data-action="share/whatsapp/share">
+                <img class="social-media-icon" src="/media/icons/whatsapp.png" alt="">
+            </a>
+            <a class="social-media-link" href="https://www.linkedin.com/sharing/share-offsite/?url=diadisc.com?code={{code}}" data-action="share/whatsapp/share">
+                <img class="social-media-icon" src="/media/icons/linkedin.svg" alt="">
+            </a>
+            <a class="social-media-link" href="https://twitter.com/intent/tweet?url=diadisc.com?code={{code}}" data-action="share/whatsapp/share">
+                <img class="social-media-icon" src="/media/icons/twitter.png" alt="">
+            </a>
+        </div>
+        <p class="social-media-text">Or copy link</p>
+    </div>
+    <div class="waitlist-success-link">
+        <input class="waitlist-success-input" name="link" id="waitlist-success-input" type="text" placeholder="Link" value="diadisc.com?code={{code}}">
+        <button class="waitlist-success-copy" id="waitlist-success-copy" onclick="copyLink()">Copy</button>
+    </div>
+</div>
+
+
+<style>
+    .waitlist-success-title{
+        font-size: 30;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .waitlist-success-focus{
+        color: #26c8aa;
+    }
+
+    .waitlist-success-text{
+        color: #7a7a7a;
+        font-size: 20;
+        font-weight: 300;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .centered-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media-text{
+        margin: 20px 0px 10px 0px;
+        color: #7a7a7a;
+        font-weight: 300;
+    }
+
+    .social-media-link{
+        height: 30px;
+        width: 30px;
+        margin: 0px 5px;
+        text-decoration: None;
+    }
+
+    .social-media-icon{
+        height: 30px;
+        width: 30px;
+    }
+
+
+    .waitlist-success-link{
+        border: 2px solid #e7e7e7;
+        color: black;
+        border-radius: 10px;
+        height: 36px;
+        font-size: 18;
+        font-weight: 300;
+        width: calc(100% - 20px);
+        margin: 10px 1px;
+        box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: 0.2s;
+        background-color: white;
+    }
+
+    .waitlist-success-input{
+        font-size: 18;
+        padding: 0;
+        margin: 0;
+        outline: None;
+        border: None;
+        height: 36px;
+        padding: 5px 10px;
+        width: 400px;
+    }
+
+    .waitlist-success-copy{
+        background-color: #f3f2f2;
+        color: black;
+        font-size: 18;
+        border: None;
+        border-left: 2px solid #e7e7e7;
+        padding: 5px 15px;
+        width: 120px;
+        text-align: center;
+        height: 36px;
+        cursor: pointer;
+    }
+</style>
