@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-%1xkbqgn%4na5oba04!v4ki*zkg@+bwu8j#pfs@l1^0!#0i_l3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['diadisc.com', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = ['https://diadisc.com', 'http://127.0.0.1:8000']
 
 
 # Application definition
@@ -120,13 +122,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#LOCAL:
+STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
+
+
+##Pythonanywhere:
+#STATIC_URL = '/static/'
+#STATIC_ROOT = '/home/nicklas02/diadisc/shop/static'
+
+#MEDIA_ROOT = '/home/nicklas02/diadisc/media'
+#MEDIA_URL = "/media/"

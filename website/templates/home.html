@@ -24,21 +24,21 @@
 
 <div id="main-wrapper">
     <div id="main">
-        <img id="logo" src="/media/logos/logo.png" alt="">
+        <img id="logo" src="/media/logos/logo.svg" alt="">
         <div class="section1">
             <div class="waitlist" id="waitlist">
                 <h1 class="waitlist-title">Your health.<br>Your right to know.</h1>
-                <p class="waitlist-text">We are developing a medical voice assistant that puts your health in your hands.</p>
-                <div class="wailtlist-signup">
-                    <input class="waitlist-input" name="email" id="waitlist-input" type="email" placeholder="Your Email">
-                    <button class="waitlist-button" onclick="joinWaitlist()">Be the first</button>
-                </div>
+                <p class="waitlist-text">Never be uncertain again about what your symptoms might mean. We are developing a medical voice assistant that puts your health in your hands.</p>
+                <form class="wailtlist-signup" id="waitlist-signup">
+                    <input class="waitlist-input" name="email" id="waitlist-input" type="email" placeholder="Your Email" required="required">
+                    <button class="waitlist-button" type="submit">Be the first</button>
+                </form>
                 <p class="waitlist-competition">Join our waitlist get the chance to win a 20€ Amazon gift card</p>
             </div>
             <div class="waitlist-success">
 
             </div>
-            <img class="thumbnail" src="/media/home/iphone.png" alt="">
+            <img class="thumbnail" src="/media/home/iphone.svg" alt="">
         </div>
     </div>
 </div>
@@ -74,15 +74,17 @@
     var gradient = new Gradient();
     gradient.initGradient("#canvas");
 
+
     function joinWaitlist(){
 
+        let email = document.getElementById('waitlist-input').value
         $.ajax({
             type: 'POST',
             url: '/create_waitlist_user/',
             dataType: 'json',
             data: {
-                'csrfmiddlewaretoken': csrftoken,
-                'email': document.getElementById('waitlist-input').value,
+                'csrfmiddlewaretoken': '{{csrf_token}}',
+                'email': email,
                 'code': '{{code}}',
             },
             success: function(response) {$('#waitlist').html(response)}
@@ -101,4 +103,11 @@
         button.innerHTML = 'Copied!'
 
     }
+
+    $(document).ready(function() {
+      $('form').on('submit', function(e){
+          e.preventDefault();
+          joinWaitlist()
+      });
+    });
 </script>
