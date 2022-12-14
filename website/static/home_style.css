@@ -191,4 +191,8 @@ canvas#canvas {
     .thumbnail{
         display: None;
     }
+
+    .university-logos{
+        display: None;
+    }
 }
